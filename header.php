@@ -67,7 +67,6 @@ if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comm
 		</hgroup>
 		<?php else: ?>
 		<div class="logo">
-			<?php bloginfo('template_directory');?>
 			<a href="<?php echo home_url() ?>"><img src="<?php bloginfo('template_directory');?>/images/logo.png"></a>
 <!--			<span class="blog-name"><a href="<?php echo home_url() ?>"><?php bloginfo('name'); ?></a></span> -->
 <!--			<span class="blog-description"><?php bloginfo('description'); ?></span>  -->

@@ -61,13 +61,14 @@ if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comm
 	<div id="branding" class="clearfix">
 		<?php if ( is_home() || is_front_page() ) : ?>
 		<hgroup class="logo">
-			<a href="<?php echo home_url() ?>"><img src="<?php echo home_url() ?>/wp-content/themes/fedora-magazine/images/logo.png"></a>
+			<a href="<?php echo home_url() ?>"><img src="<?php bloginfo('template_directory');?>/images/logo.png"></a>
 <!--			<h1 class="blog-name"><a href="<?php echo home_url() ?>"><?php bloginfo('name'); ?></a></h1> -->
 <!--			<h2 class="blog-description"><?php bloginfo('description'); ?></h2>	-->
 		</hgroup>
 		<?php else: ?>
 		<div class="logo">
-			<a href="<?php echo home_url() ?>"><img src="<?php echo home_url() ?>/wp-content/themes/fedora-magazine/images/logo.png"></a>
+			<?php bloginfo('template_directory');?>
+			<a href="<?php echo home_url() ?>"><img src="<?php bloginfo('template_directory');?>/images/logo.png"></a>
 <!--			<span class="blog-name"><a href="<?php echo home_url() ?>"><?php bloginfo('name'); ?></a></span> -->
 <!--			<span class="blog-description"><?php bloginfo('description'); ?></span>  -->
 		</div>

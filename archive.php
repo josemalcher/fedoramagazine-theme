@@ -25,12 +25,31 @@
     <?php endif; ?>
     
 	<div id="archive-posts">
-	<?php ar2_render_posts( null, array ( 'type' => ar2_get_theme_option( 'archive_display' ) ), true ) ?>
+	<div id="section-archive-posts" class="clearfix"><ul class="hfeed posts-quick">
+			<?php
+			/* Start the Loop */
+			while ( have_posts() ) : the_post();
+
+				/* Include the post format-specific template for the content. If you want to
+				 * this in a child theme then include a file called called content-___.php
+				 * (where ___ is the post format) and that will be used instead.
+				 */
+				get_template_part( 'section-quick' );
+
+			endwhile; ?>
+			
+</ul><!-- .posts-quick--></div><!-- #section-archive-posts-->
 	</div><!-- #archive-posts -->
+	
 	
 <?php else : ?>
 	<?php ar2_post_notfound() ?>
 <?php endif; ?>
+
+<div class="navigation clearfix">
+    <div class="prev"><?php previous_posts_link( '&laquo; Previous page' ); ?></div>
+    <div class="next"><?php next_posts_link( 'Next page &raquo;' ); ?></div>
+</div>
 
 <?php ar2_below_content() ?>
 </div><!-- #content -->
